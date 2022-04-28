@@ -1,0 +1,1 @@
+pyinstaller --onefile --icon "icon.ico" --console --name "Icomoon Grabber" --add-data="C:/Python310/Lib/site-packages/grapheme/data/*;grapheme/data/" main.py
