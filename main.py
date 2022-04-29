@@ -40,6 +40,7 @@ def main():
 def downloader():
     print("Please Enter the Quick Usage and Sharing Link")
     link = input(">> ")
+    print("")
     header = "Mozilla/5.0 (Windows NT 10.0; rv:91.0) Gecko/20100101 Firefox/91.0"
     try:
         r = requests.get(link,headers={"User-Agent":header},timeout=10,stream=True)
@@ -64,7 +65,8 @@ def downloader():
         fx1 = file.strip("url('")
         fx2 = fx1.strip("')")
         raw_filename = fx2.split('/')[-1]
-        filename = raw_filename.split('?')[0]
+        raw_filename2 = raw_filename.split('?')[0]
+        filename = raw_filename2.replace("icomoon", "wolf")
         r = requests.get(fx2,headers={"User-Agent":header},timeout=10,stream=True)
         file_path = os.path.join("misc/" + filename)
         file = open(file_path, 'wb')
@@ -75,11 +77,53 @@ def downloader():
                     file.flush()
                     bar()
         file.close()
-    print("Successfully Grabbed " + colored("wolf-awesome.css","green") + " and all necessary files!")
+
+    # Fix css file to load local files
+    with open("css/wolf-awesome.css","r") as wa:
+        lines = wa.readlines()
+        lines[2] = ""        
+        lines[3] = "  src: url('../misc/icomoon.eot');\n"
+        lines[4] = "  src: url('../misc/icomoon.eot') format('embedded-opentype'), url('../misc/icomoon.ttf') format('truetype'), url('../misc/icomoon.woff') format('woff'), url('../misc/icomoon.svg') format('svg');\n"
+        lines[5] = ""
+        lines[6] = ""
+        lines[7] = ""
+        lines[12] = '[class^="wa-"], [class*=" wa-"] {'
+    with open("css/wolf-awesome.css","w") as wa:
+        wa.writelines(lines)
+
+    # Correct Icon Names
+    with open(r'css/wolf-awesome.css', 'r') as file:
+        data = file.read()
+        data = data.replace(".icon", ".wa")
+    with open(r'css/wolf-awesome.css', 'w') as file:
+        file.write(data)
+        file.close()
+    with open(r'css/wolf-awesome.css', 'r') as file:
+        data = file.read()
+        data = data.replace("icomoon", "wolf")
+    with open(r'css/wolf-awesome.css', 'w') as file:
+        file.write(data2)
+        file.close()
+
+    # Correct SVG
+    with open(r'misc/wolf-awesome.css', 'r') as file:
+        data = file.read()
+        data = data.replace(".icon", ".wa")
+    with open(r'css/wolf-awesome.css', 'w') as file:
+        file.write(data)
+        file.close()
+    with open(r'css/wolf-awesome.css', 'r') as file:
+        data2 = file.read()
+        data2 = data2.replace("icomoon", "wolf")
+    with open(r'css/wolf-awesome.css', 'w') as file:
+        file.write(data2)
+        file.close()
+    
     print("")
-
+    print("Successfully Grabbed all necessary files and built " + colored("wolf-awesome.css","green") + "!")
+    print("")
+    print("")
     downloader()
-
 
 if __name__ == '__main__':
     main()
