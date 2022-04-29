@@ -8,13 +8,13 @@ Head over to [Icomoon][1]. Once you are on the site click on "Import Icons" on t
 ##
 #### TL:DR
 
-1: Open [Icomoon][1]
-2: Import Icons
-3: Select all Icons
-4: Generate Font
-5: Rename Icons with an appropriate name
-6: Generate "Quick Usage and Sharing"
-7: Enter ONLY the url part into the tool
+1: Open [Icomoon][1]  
+2: Import Icons  
+3: Select all Icons  
+4: Generate Font  
+5: Rename Icons with an appropriate name  
+6: Generate "Quick Usage and Sharing"  
+7: Enter ONLY the url part into the tool  
 
 ##
 #### Example Project using this
