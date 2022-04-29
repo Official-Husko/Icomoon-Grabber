@@ -8,7 +8,7 @@ from alive_progress import alive_bar
 import re
 
 # Defined Variables
-version = "1.1.0"
+version = "1.1.1"
 
 # Check if folder exists else create it
 if os.path.exists('misc'):
@@ -29,8 +29,8 @@ os.system('cls')
 def main():
     print(colored("======================================================================================================================", "red"))
     print(colored("|                                                                                                                    |", "red"))
-    print(colored("|     " + colored("Product: ", "white") + colored("Husko's Wolf-Awesome-Lite", "green") + colored("                                                                               |", "red"), "red"))
-    print(colored("|     " + colored("Version: ", "white") + colored(version, "green") + colored("                                                                                                   |", "red"), "red"))
+    print(colored("|     " + colored("Product: ", "white") + colored("Husko's Wolf-Awesome-Lite", "green") + colored("                                                                             |", "red"), "red"))
+    print(colored("|     " + colored("Version: ", "white") + colored(version, "green") + colored("                                                                                                 |", "red"), "red"))
     print(colored("|     " + colored("Description: ", "white") + colored("Quickly aqcuire the files for locally hosting custom icons.", "green") + colored("                                       |", "red"), "red"))
     print(colored("|                                                                                                                    |", "red"))
     print(colored("======================================================================================================================", "red"))

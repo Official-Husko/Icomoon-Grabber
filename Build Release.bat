@@ -1,1 +1,1 @@
-pyinstaller --onefile --icon "icon.ico" --console --name "Icomoon Grabber" --add-data="C:/Python310/Lib/site-packages/grapheme/data/*;grapheme/data/" main.py
+pyinstaller --onefile --icon "icon.ico" --console --name "Wolf-Awesome-Lite" --add-data="C:/Python310/Lib/site-packages/grapheme/data/*;grapheme/data/" main.py
